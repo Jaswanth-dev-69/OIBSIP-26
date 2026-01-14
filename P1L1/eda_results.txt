@@ -1,0 +1,216 @@
+==================================================
+RETAIL SALES DATA - EDA REPORT
+==================================================
+
+>> Loading dataset from Kaggle...
+Dataset loaded!
+Rows: 1000
+Columns: 9
+
+==================================================
+STEP 3: VIEW THE DATA
+==================================================
+
+--- First 5 Rows ---
+   Transaction ID        Date Customer ID  Gender  Age Product Category  Quantity  Price per Unit  Total Amount
+0               1  2023-11-24     CUST001    Male   34           Beauty         3              50           150
+1               2  2023-02-27     CUST002  Female   26         Clothing         2             500          1000
+2               3  2023-01-13     CUST003    Male   50      Electronics         1              30            30
+3               4  2023-05-21     CUST004    Male   37         Clothing         1             500           500
+4               5  2023-05-06     CUST005    Male   30           Beauty         2              50           100
+
+--- Column Names ---
+['Transaction ID', 'Date', 'Customer ID', 'Gender', 'Age', 'Product Category', 'Quantity', 'Price per Unit', 'Total Amount']
+
+--- Data Types ---
+Transaction ID       int64
+Date                object
+Customer ID         object
+Gender              object
+Age                  int64
+Product Category    object
+Quantity             int64
+Price per Unit       int64
+Total Amount         int64
+
+==================================================
+STEP 4: CHECK MISSING VALUES
+==================================================
+Transaction ID      0
+Date                0
+Customer ID         0
+Gender              0
+Age                 0
+Product Category    0
+Quantity            0
+Price per Unit      0
+Total Amount        0
+
+Total Missing: 0
+
+==================================================
+STEP 5: CHECK DUPLICATES
+==================================================
+Duplicate Rows: 0
+
+==================================================
+STEP 6: UNIQUE VALUES
+==================================================
+Transaction ID      1000
+Date                 345
+Customer ID         1000
+Gender                 2
+Age                   47
+Product Category       3
+Quantity               4
+Price per Unit         5
+Total Amount          18
+
+==================================================
+STEP 7: CONVERT DATE
+==================================================
+Date column converted!
+
+==================================================
+STEP 8: DESCRIPTIVE STATISTICS
+==================================================
+
+--- describe() output ---
+       Transaction ID                           Date         Age     Quantity  Price per Unit  Total Amount
+count     1000.000000                           1000  1000.00000  1000.000000     1000.000000   1000.000000
+mean       500.500000  2023-07-03 00:25:55.200000256    41.39200     2.514000      179.890000    456.000000
+min          1.000000            2023-01-01 00:00:00    18.00000     1.000000       25.000000     25.000000
+25%        250.750000            2023-04-08 00:00:00    29.00000     1.000000       30.000000     60.000000
+50%        500.500000            2023-06-29 12:00:00    42.00000     3.000000       50.000000    135.000000
+75%        750.250000            2023-10-04 00:00:00    53.00000     4.000000      300.000000    900.000000
+max       1000.000000            2024-01-01 00:00:00    64.00000     4.000000      500.000000   2000.000000
+std        288.819436                            NaN    13.68143     1.132734      189.681356    559.997632
+
+--- Age ---
+Mean: 41.39
+Median: 42.00
+Mode: 43
+Std: 13.68
+
+--- Total Amount ---
+Mean: $456.00
+Median: $135.00
+Mode: $50
+Std: $560.00
+
+==================================================
+STEP 9: TIME SERIES ANALYSIS
+==================================================
+
+--- Monthly Sales ---
+Month
+1     36980
+2     44060
+3     28990
+4     33870
+5     53150
+6     36715
+7     35465
+8     36960
+9     23620
+10    46580
+11    34920
+12    44690
+
+Saved: 01_monthly_sales_trend.png
+
+==================================================
+STEP 10: CUSTOMER ANALYSIS
+==================================================
+
+--- Gender Count ---
+Gender
+Female    510
+Male      490
+
+--- Sales by Gender ---
+Gender
+Female    232840
+Male      223160
+
+Saved: 02_sales_by_gender.png
+
+Saved: 03_age_distribution.png
+
+==================================================
+STEP 11: PRODUCT ANALYSIS
+==================================================
+
+--- Category Count ---
+Product Category
+Clothing       351
+Electronics    342
+Beauty         307
+
+--- Sales by Category ---
+Product Category
+Beauty         143515
+Clothing       155580
+Electronics    156905
+
+Saved: 04_sales_by_category.png
+
+==================================================
+STEP 12: SALES DISTRIBUTION
+==================================================
+Total Sales: $456,000.00
+Average Sale: $456.00
+Min Sale: $25.00
+Max Sale: $2,000.00
+
+Saved: 05_sales_distribution.png
+
+==================================================
+STEP 13: CORRELATION ANALYSIS
+==================================================
+
+--- Correlation Matrix ---
+                     Age  Quantity  Price per Unit  Total Amount
+Age             1.000000 -0.023737       -0.038423     -0.060568
+Quantity       -0.023737  1.000000        0.017501      0.373707
+Price per Unit -0.038423  0.017501        1.000000      0.851925
+Total Amount   -0.060568  0.373707        0.851925      1.000000
+
+Saved: 06_correlation_heatmap.png
+
+==================================================
+FINAL SUMMARY
+==================================================
+
+Total Records: 1000
+Total Customers: 1000
+Product Categories: 3
+Total Revenue: $456,000.00
+Average Sale: $456.00
+
+==================================================
+BUSINESS RECOMMENDATIONS
+==================================================
+
+1. FOCUS ON ELECTRONICS:
+   Electronics has highest sales - stock more items.
+
+2. TARGET FEMALE CUSTOMERS:
+   Females buy slightly more - run female-focused ads.
+
+3. PEAK MONTHS:
+   May and October have high sales - prepare inventory.
+
+4. SLOW MONTHS:
+   September is slow - offer discounts to boost sales.
+
+5. BUNDLE PRODUCTS:
+   Price and Total Amount are linked - create bundles.
+
+6. LOYALTY PROGRAM:
+   Each customer bought once - start a loyalty program.
+
+
+==================================================
+EDA COMPLETED!
+==================================================
